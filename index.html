@@ -1,0 +1,98 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Food Menu</title>
+
+<style>
+body{
+    font-family: Arial;
+    padding:20px;
+}
+
+/* TOP MENU */
+.menu-tabs{
+    display:flex;
+    gap:20px;
+    border-bottom:2px solid #ddd;
+    padding-bottom:10px;
+    cursor:pointer;
+}
+
+.menu-tabs span{
+    font-weight:bold;
+    color:#555;
+}
+
+.menu-tabs span.active{
+    color:#1e90ff;
+    border-bottom:3px solid #1e90ff;
+    padding-bottom:8px;
+}
+
+/* ITEMS */
+.menu{
+    margin-top:20px;
+}
+
+.item{
+    background:#f2f2f2;
+    padding:10px;
+    margin-bottom:8px;
+    border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Food Menu</h2>
+
+<!-- TOP ITEMS (NO BUTTONS) -->
+<div class="menu-tabs">
+    <span class="active" onclick="filterItems('all', this)">All</span>
+    <span onclick="filterItems('breakfast', this)">Breakfast</span>
+    <span onclick="filterItems('lunch', this)">Lunch</span>
+    <span onclick="filterItems('dinner', this)">Dinner</span>
+</div>
+
+<!-- MENU ITEMS -->
+<div class="menu">
+    <div class="item breakfast">Paratha & Egg</div>
+    <div class="item breakfast">Halwa</div>
+    <div class="item breakfast">Chna</div>
+    <div class="item breakfast">Bread</div>
+
+    <div class="item lunch">Chicken Biryani</div>
+    <div class="item lunch">Daal Chawal</div>
+   <div class="item lunch">Korma</div>
+   <div class="item lunch">Roti</div>
+   <div class="item lunch">Soap</div>
+
+    <div class="item dinner">BBQ</div>
+    <div class="item dinner">Karahi</div>
+       <div class="item dinner">Fish</div>
+          <div class="item dinner">Kabab</div>
+             <div class="item dinner">Zinger Burger</div>
+</div>
+
+<script>
+function filterItems(category, element){
+    let items = document.querySelectorAll(".item");
+    let tabs = document.querySelectorAll(".menu-tabs span");
+
+    tabs.forEach(tab => tab.classList.remove("active"));
+    element.classList.add("active");
+
+    items.forEach(item => {
+        if(category === "all" || item.classList.contains(category)){
+            item.style.display = "block";
+        }else{
+            item.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
