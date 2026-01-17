@@ -1,0 +1,135 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Al Rafay Online Institute</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f5f7fb;color:#222;}
+header{background:linear-gradient(120deg,#0f766e,#16a34a);color:#fff;padding:40px 20px;text-align:center;animation:fadeDown 1s;}
+header h1{font-size:36px;}
+header p{margin-top:10px;font-size:16px;}
+nav{background:#fff;display:flex;justify-content:center;gap:30px;padding:15px;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+nav a{text-decoration:none;color:#0f766e;font-weight:600;transition:0.3s;cursor:pointer;}
+nav a:hover{color:#16a34a;}
+section{padding:70px 10%;animation:fadeUp 1s;}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.hero h2{font-size:32px;}
+.hero p{margin:15px 0;line-height:1.7;}
+.btn{display:inline-block;padding:12px 25px;background:#16a34a;color:#fff;border-radius:30px;text-decoration:none;margin-top:15px;transition:0.3s;cursor:pointer;}
+.btn:hover{background:#0f766e;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.card{background:#fff;padding:25px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.08);transition:.3s;text-align:center;}
+.card:hover{transform:translateY(-10px);box-shadow:0 15px 35px rgba(0,0,0,0.15);}
+.card h3{color:#0f766e;margin-bottom:10px;}
+.details{
+    display:none;
+    margin-top:15px;
+    text-align:left;
+    background:#f0fdf4;
+    padding:15px;
+    border-radius:10px;
+    overflow:hidden;
+    max-height:0;
+    transition:max-height 0.5s ease, opacity 0.5s ease;
+    opacity:0;
+}
+.details.show{
+    display:block;
+    max-height:300px;
+    opacity:1;
+}
+footer{background:#0f766e;color:#fff;text-align:center;padding:20px;}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:600;transition:0.3s;}
+.whatsapp:hover{background:#128C7E;}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.hero{grid-template-columns:1fr;text-align:center;}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Al Rafay Online Institute</h1>
+<p>Online Islamic Education for Everyone</p>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#courses">Courses</a>
+<a href="#arabic">Arabic Group</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="about">
+<div>
+<h2>Learn Quran & Islamic Knowledge Online</h2>
+<p>
+Al Rafay Online Institute provides quality online Islamic education including
+Quran Nazrah, Masnoon Duas, and Arabic speaking practice.
+</p>
+<a class="btn" href="#courses">Start Learning</a>
+</div>
+</section>
+
+<section id="courses">
+<h2 style="text-align:center;margin-bottom:40px;">Our Courses</h2>
+<div class="cards">
+<div class="card">
+<h3>Quran Nazrah</h3>
+<p>Learn Quran recitation with proper Tajweed rules online.</p>
+<button class="btn" onclick="toggleDetails('quran')">Learn More</button>
+<div id="quran" class="details">
+<p><b>Nazrah:</b> Achi tajweed ke sath</p>
+<p><b>Complete Nazrah:</b> Quran & Qaida seekhein</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Masnoon Duas</h3>
+<p>Learn daily supplications with meaning and correct pronunciation.</p>
+<button class="btn" onclick="toggleDetails('duas')">Learn More</button>
+<div id="duas" class="details">
+<p><b>Daily Duas:</b> Rozana ki masnoon dua's inshallah yaad krwayi jayi gi</p></br>
+<p><b>Practice:</b> Practice karwai jaye gi dua ki aur tarjuma bhi yaad karwaya jaye ga.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="arabic">
+<h2 style="text-align:center;margin-bottom:20px;">Arabic Speaking Group</h2>
+<p style="text-align:center;">
+Join our Arabic speaking WhatsApp group to improve daily conversation skills.
+Practice writing and speaking Arabic with other learners.
+</p>
+<div style="text-align:center;">
+<a class="btn" href="https://chat.whatsapp.com/FKfoqVnYgGb5A1tHF8Pde4" target="_blank">Join Arabic Speaking Group</a>
+</div>
+</section>
+
+<section id="contact">
+<h2 style="text-align:center;margin-bottom:20px;">Contact</h2>
+<p style="text-align:center;">
+Email: <b>qariabdurrafay103@gmail.com</b><br>
+Phone: <b>0322-3797262</b>
+</p>
+</section>
+
+<footer>
+<p>© 2026 Al Rafay Online Institute</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/923223797262" target="_blank">Chat on WhatsApp</a>
+
+<script>
+function toggleDetails(id){
+    const el = document.getElementById(id);
+    el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
